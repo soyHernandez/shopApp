@@ -11,7 +11,7 @@ import { useEffect} from "react"
 export const Shop = () => {
     const locationHref = useLocation()
     const changePage = ()=>{
-        if (locationHref.pathname == '/home') {
+        if (locationHref.pathname == '/') {
             const element = document.querySelector('.container');
             element.classList.add('container-cart')
 
@@ -31,9 +31,9 @@ export const Shop = () => {
                 <BarNav />
                 <div className="container">
                     <Routes>
-                        <Route path="/home" element={<ShopScreen></ShopScreen>}></Route>
+                        <Route path="/" element={<ShopScreen></ShopScreen>}></Route>
                         <Route path="/carrito" element={<CartScreen></CartScreen>}></Route>
-                        <Route path="/*" element={<Navigate to='/home'></Navigate>}></Route>
+                        <Route path="/*" element={<Navigate to='/'></Navigate>}></Route>
                     </Routes>
                 </div>
             </CartProvider>
